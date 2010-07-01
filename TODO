@@ -1,6 +1,4 @@
 TODO
 
-- Clean up the code in TeaActionSheet
-- Provide an explanation for the hackiness in TeaActionSheet
 - Create a TeaAlertView, similar to TeaActionSheet
 - Add usage instructions
