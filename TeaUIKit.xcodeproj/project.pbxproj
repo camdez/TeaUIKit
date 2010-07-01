@@ -19,6 +19,8 @@
 		327D32B511DC635100B4BDAE /* TeaActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeaActionSheet.m; sourceTree = "<group>"; };
 		327D32CC11DC63E500B4BDAE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		327D336911DC6D7400B4BDAE /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = SOURCE_ROOT; };
+		327D337F11DC75D800B4BDAE /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
+		327D338F11DC7A7000B4BDAE /* LICENSE.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.mdown; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TeaUIKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeaUIKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTeaUIKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTeaUIKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +51,8 @@
 			isa = PBXGroup;
 			children = (
 				327D336911DC6D7400B4BDAE /* TODO */,
+				327D337F11DC75D800B4BDAE /* README.mdown */,
+				327D338F11DC7A7000B4BDAE /* LICENSE.mdown */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
