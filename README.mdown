@@ -2,7 +2,7 @@ TeaUIKit
 ========
 
 TeaUIKit is a collection of general purpose UI classes for Apple's
-iOS, open-sourced by [Too Much Tea, LLC][http://teaapps.com].
+iOS, open-sourced by [Too Much Tea, LLC](http://teaapps.com).
 
 **Author:** Cameron Desautels \<<camdez@gmail.com>\>  
 **Source:** <http://github.com/camdez/TeaUIKit>
