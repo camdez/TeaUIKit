@@ -1,0 +1,9 @@
+TODO
+
+- Do some decent branding (put company name, URL)
+- Write a README (or whatever) for the sake of GitHub
+- License
+- Clean up the code in TeaActionSheet
+- Provide a description for TeaActionSheet
+- Provide an explanation for the hackiness in TeaActionSheet
+- Create a TeaAlertView, similar to TeaActionSheet
