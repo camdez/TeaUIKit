@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 
-
+// A simple browser interface.  No location bar but user can go forward, backward, etc.
 @interface TeaWebViewController : UIViewController 
     <UIActionSheetDelegate, UIWebViewDelegate, MFMailComposeViewControllerDelegate>
 
