@@ -1,4 +1,8 @@
 TODO
 
+- Remove the prefix header--it's only going to cause hassles for people who directly include the files
 - Create a TeaAlertView, similar to TeaActionSheet
 - Add usage instructions
+- Create a TeaUIKit.h file that references all of the other headers
+- TeaWebViewController
+  - i18n

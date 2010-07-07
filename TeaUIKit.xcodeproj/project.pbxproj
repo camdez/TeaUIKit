@@ -10,6 +10,8 @@
 		327D32B611DC635100B4BDAE /* TeaActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 327D32B411DC635100B4BDAE /* TeaActionSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		327D32B711DC635100B4BDAE /* TeaActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 327D32B511DC635100B4BDAE /* TeaActionSheet.m */; };
 		327D32CD11DC63E500B4BDAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327D32CC11DC63E500B4BDAE /* UIKit.framework */; };
+		327D350111DD281E00B4BDAE /* TeaWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 327D34FF11DD281E00B4BDAE /* TeaWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		327D350211DD281E00B4BDAE /* TeaWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 327D350011DD281E00B4BDAE /* TeaWebViewController.m */; };
 		AA747D9F0F9514B9006C5449 /* TeaUIKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TeaUIKit_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -21,6 +23,9 @@
 		327D336911DC6D7400B4BDAE /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = SOURCE_ROOT; };
 		327D337F11DC75D800B4BDAE /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		327D338F11DC7A7000B4BDAE /* LICENSE.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.mdown; sourceTree = "<group>"; };
+		327D34FF11DD281E00B4BDAE /* TeaWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeaWebViewController.h; sourceTree = "<group>"; };
+		327D350011DD281E00B4BDAE /* TeaWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeaWebViewController.m; sourceTree = "<group>"; };
+		327D368811DD549D00B4BDAE /* TeaUIKit-Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "TeaUIKit-Resources"; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TeaUIKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeaUIKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTeaUIKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTeaUIKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +58,7 @@
 				327D336911DC6D7400B4BDAE /* TODO */,
 				327D337F11DC75D800B4BDAE /* README.mdown */,
 				327D338F11DC7A7000B4BDAE /* LICENSE.mdown */,
+				327D368811DD549D00B4BDAE /* TeaUIKit-Resources */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -75,6 +81,8 @@
 			children = (
 				327D32B411DC635100B4BDAE /* TeaActionSheet.h */,
 				327D32B511DC635100B4BDAE /* TeaActionSheet.m */,
+				327D34FF11DD281E00B4BDAE /* TeaWebViewController.h */,
+				327D350011DD281E00B4BDAE /* TeaWebViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -96,6 +104,7 @@
 			files = (
 				AA747D9F0F9514B9006C5449 /* TeaUIKit_Prefix.pch in Headers */,
 				327D32B611DC635100B4BDAE /* TeaActionSheet.h in Headers */,
+				327D350111DD281E00B4BDAE /* TeaWebViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				327D32B711DC635100B4BDAE /* TeaActionSheet.m in Sources */,
+				327D350211DD281E00B4BDAE /* TeaWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
