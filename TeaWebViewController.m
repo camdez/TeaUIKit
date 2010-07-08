@@ -45,14 +45,14 @@
 }
 
 - (void)dealloc {
-    self.initialURL = nil;
+    [_initialURL release], _initialURL = nil;
     self.webView.delegate = nil; // official docs require this
-    self.webView = nil;
-    
-    self.backButton = nil;
-    self.forwardButton = nil;
-    self.refreshButton = nil;
-    self.actionMenuButton = nil;
+    [_webView release], _webView = nil;
+
+    [_backButton release], _backButton = nil;
+    [_forwardButton release], _forwardButton = nil;
+    [_refreshButton release], _refreshButton = nil;
+    [_actionButton release], _actionButton = nil;
     
     [super dealloc];
 }
