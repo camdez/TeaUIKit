@@ -7,6 +7,7 @@
 //
 
 #import "TeaWebViewController.h"
+#import "TeaActionSheet.h"
 
 
 @interface TeaWebViewController ()
@@ -117,12 +118,11 @@
 - (IBAction)actionMenuButtonAction {
     NSString* mailButton = [MFMailComposeViewController canSendMail] ? @"Mail Link" : nil;
 
-    // TODO: Make this a TeaActionSheet--conditionally?
-    UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:self.webView.request.URL.absoluteString
-                                                             delegate:self
-                                                    cancelButtonTitle:@"Cancel"
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"Open in Safari", mailButton, nil];
+    TeaActionSheet* actionSheet = [[TeaActionSheet alloc] initWithTitle:self.webView.request.URL.absoluteString
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Cancel"
+                                                 destructiveButtonTitle:nil
+                                                      otherButtonTitles:@"Open in Safari", mailButton, nil];
     [actionSheet showFromToolbar:self.navigationController.toolbar];
     [actionSheet release];
 }
