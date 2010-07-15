@@ -12,7 +12,6 @@
 		327D32CD11DC63E500B4BDAE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327D32CC11DC63E500B4BDAE /* UIKit.framework */; };
 		327D350111DD281E00B4BDAE /* TeaWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 327D34FF11DD281E00B4BDAE /* TeaWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		327D350211DD281E00B4BDAE /* TeaWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 327D350011DD281E00B4BDAE /* TeaWebViewController.m */; };
-		AA747D9F0F9514B9006C5449 /* TeaUIKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TeaUIKit_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,7 @@
 		327D34FF11DD281E00B4BDAE /* TeaWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeaWebViewController.h; sourceTree = "<group>"; };
 		327D350011DD281E00B4BDAE /* TeaWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeaWebViewController.m; sourceTree = "<group>"; };
 		327D368811DD549D00B4BDAE /* TeaUIKit-Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "TeaUIKit-Resources"; sourceTree = "<group>"; };
-		AA747D9E0F9514B9006C5449 /* TeaUIKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeaUIKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		32C0433611EFC147000027D7 /* TeaUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeaUIKit.h; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTeaUIKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTeaUIKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -90,7 +89,7 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AA747D9E0F9514B9006C5449 /* TeaUIKit_Prefix.pch */,
+				32C0433611EFC147000027D7 /* TeaUIKit.h */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -102,7 +101,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA747D9F0F9514B9006C5449 /* TeaUIKit_Prefix.pch in Headers */,
 				327D32B611DC635100B4BDAE /* TeaActionSheet.h in Headers */,
 				327D350111DD281E00B4BDAE /* TeaWebViewController.h in Headers */,
 			);
@@ -170,8 +168,8 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = TeaUIKit_Prefix.pch;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = TeaUIKit;
 			};
