@@ -58,7 +58,8 @@
                                 nil];
 
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidEnterBackgroundNotification
+        // XXX Using a string here instead of the notification constant is critical for running on iOS < v4.0
+        [[NSNotificationCenter defaultCenter] addObserverForName:@"UIApplicationDidEnterBackgroundNotification"
                                                           object:nil
                                                            queue:nil
                                                       usingBlock:^(NSNotification *notification){
