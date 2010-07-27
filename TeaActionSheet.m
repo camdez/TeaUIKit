@@ -58,13 +58,16 @@
                                 nil];
 
     if (self) {
-        // XXX Using a string here instead of the notification constant is critical for running on iOS < v4.0
-        [[NSNotificationCenter defaultCenter] addObserverForName:@"UIApplicationDidEnterBackgroundNotification"
-                                                          object:nil
-                                                           queue:nil
-                                                      usingBlock:^(NSNotification *notification){
-                                                          [self dismissWithClickedButtonIndex:self.cancelButtonIndex animated:NO];
-                                                      }];
+        // XXX addObserverForName:object:queue:usingBlock: was added in 4.0, so prevent crashes on iOS < 4.0
+        if ([[NSNotificationCenter defaultCenter] respondsToSelector:@selector(addObserverForName:object:queue:usingBlock:)]) {
+            // XXX Using a string here instead of the notification constant is critical for running on iOS < v4.0
+            [[NSNotificationCenter defaultCenter] addObserverForName:@"UIApplicationDidEnterBackgroundNotification"
+                                                              object:nil
+                                                               queue:nil
+                                                          usingBlock:^(NSNotification *notification){
+                                                              [self dismissWithClickedButtonIndex:self.cancelButtonIndex animated:NO];
+                                                          }];
+        }
     }
     return self;
 }
