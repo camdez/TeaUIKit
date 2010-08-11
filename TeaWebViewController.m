@@ -16,9 +16,11 @@
 @property (nonatomic, retain) UIBarButtonItem* backButton;
 @property (nonatomic, retain) UIBarButtonItem* forwardButton;
 @property (nonatomic, retain) UIBarButtonItem* refreshButton;
+@property (nonatomic, retain) UIBarButtonItem* stopButton;
 @property (nonatomic, retain) UIBarButtonItem* actionMenuButton;
 
 - (void)actionMenuButtonAction;
+- (void)replaceToolbarItem:(UIBarButtonItem*)oldItem withItem:(UIBarButtonItem*)newItem;
 
 @end
 
@@ -30,6 +32,7 @@
 @synthesize backButton = _backButton;
 @synthesize forwardButton = _forwardButton;
 @synthesize refreshButton = _refreshButton;
+@synthesize stopButton = _stopButton;
 @synthesize actionMenuButton = _actionButton;
 
 
@@ -53,6 +56,7 @@
     [_backButton release], _backButton = nil;
     [_forwardButton release], _forwardButton = nil;
     [_refreshButton release], _refreshButton = nil;
+    [_stopButton release], _stopButton = nil;
     [_actionButton release], _actionButton = nil;
     
     [super dealloc];
@@ -82,6 +86,10 @@
     self.refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                        target:self.webView action:@selector(reload)];
     [self.refreshButton release];
+
+    self.stopButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
+                                                                    target:self.webView action:@selector(stopLoading)];
+    [self.stopButton release];
     
     self.actionMenuButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
                                                                           target:self action:@selector(actionMenuButtonAction)];
@@ -128,6 +136,20 @@
 }
 
 #pragma mark -
+#pragma mark Utility methods
+
+- (void)replaceToolbarItem:(UIBarButtonItem*)oldItem withItem:(UIBarButtonItem*)newItem {
+    NSUInteger oldItemIndex = [self.toolbarItems indexOfObject:oldItem];
+    if (oldItemIndex == NSNotFound)
+        return;
+
+    NSMutableArray* newToolbarItems = [self.toolbarItems mutableCopy];
+    [newToolbarItems replaceObjectAtIndex:oldItemIndex withObject:newItem];
+    [self setToolbarItems:newToolbarItems];
+    [newToolbarItems release];
+}
+
+#pragma mark -
 #pragma mark UIActionSheetDelegate methods
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -153,6 +175,9 @@
     self.backButton.enabled = self.webView.canGoBack;
     self.forwardButton.enabled = self.webView.canGoForward;
     self.actionMenuButton.enabled = NO;
+
+    // Replace refresh button with stop button
+    [self replaceToolbarItem:self.refreshButton withItem:self.stopButton];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
@@ -161,7 +186,9 @@
     self.backButton.enabled = self.webView.canGoBack;
     self.forwardButton.enabled = self.webView.canGoForward;
     self.actionMenuButton.enabled = YES;
-    
+
+    [self replaceToolbarItem:self.stopButton withItem:self.refreshButton];
+
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
     self.title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];    
@@ -171,9 +198,15 @@
     self.backButton.enabled = self.webView.canGoBack;
     self.forwardButton.enabled = self.webView.canGoForward;
     self.actionMenuButton.enabled = NO;
-    
+
+    [self replaceToolbarItem:self.stopButton withItem:self.refreshButton];
+
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    
+
+    // Ignore the error that occurs when the request is cancelled (stop button, etc)
+    if ([error code] == NSURLErrorCancelled)
+        return;
+
     UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error"
                                                         message:[error localizedDescription]
                                                        delegate:nil
