@@ -176,7 +176,6 @@
     self.forwardButton.enabled = self.webView.canGoForward;
     self.actionMenuButton.enabled = NO;
 
-    // Replace refresh button with stop button
     [self replaceToolbarItem:self.refreshButton withItem:self.stopButton];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
